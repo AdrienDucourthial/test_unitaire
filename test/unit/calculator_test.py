@@ -15,11 +15,11 @@ class TestCalculate(unittest.TestCase):
     self.assertEqual(calculate("square_root", self.x, self.y), 2)
 
   def test_wrong_operator(self):
-    with self.assertRaise(UnboundLocalError):
+    with self.assertRaises(UnboundLocalError):
       calculate("", self.x, self.y)
   
   def test_too_many_parameters(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       calculate("add", self.x, self.y, 42)
 
 
@@ -32,11 +32,11 @@ class TestAddMethod(unittest.TestCase):
     self.assertEqual(Calculator.add(self.x, self.y), 6)
 
   def test_add_wrong_x_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.add("4", self.y)
   
   def test_add_wrong_y_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.add(self.x, "2")
 
   def test_add_string_parameters(self):
@@ -51,11 +51,11 @@ class TestSubtractMethod(unittest.TestCase):
     self.assertEqual(Calculator.subtract(self.x, self.y), 2)
 
   def test_subtract_wrong_x_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.subtract("4", self.y)
   
   def test_subtract_wrong_y_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.subtract(self.x, "2")
 
 class TestMultiplyMethod(unittest.TestCase):
@@ -73,7 +73,7 @@ class TestMultiplyMethod(unittest.TestCase):
     self.assertEqual(Calculator.multiply(self.x, "2"), "2222")
 
   def test_multiply_string_parameters(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.multiply("4", "2")
 
 class TestDivideMethod(unittest.TestCase):
@@ -85,11 +85,11 @@ class TestDivideMethod(unittest.TestCase):
     self.assertEqual(Calculator.divide(self.x, self.y), 2)
 
   def test_divide_wrong_x_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.divide("4", self.y)
   
   def test_divide_wrong_y_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.divide(self.x, "2")
 
 class TestPowerMethod(unittest.TestCase):
@@ -116,7 +116,7 @@ class TestSquareRootMethod(unittest.TestCase):
     self.assertEqual(Calculator.square_root(self.x), 2)
 
   def test_square_root_wrong_x_type(self):
-    with self.assertRaise(TypeError):
+    with self.assertRaises(TypeError):
       Calculator.square_root("4")
 
 
